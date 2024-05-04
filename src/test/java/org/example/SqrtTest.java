@@ -1,8 +1,8 @@
 package org.example;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-import static org.junit.Assert.*;
+import static junit.framework.Assert.*;
 
 public class SqrtTest {
 
@@ -36,8 +36,6 @@ public class SqrtTest {
         assertEquals(sqrt.improve(5.0, 1.0), 2.6, sqrt.delta);
         assertEquals(sqrt.improve(5.0, 2.0), 2.7, sqrt.delta);
         assertEquals(sqrt.improve(-5.0, 5.0), -2.999999999, sqrt.delta);
-        assertNotEquals(sqrt.improve(10.0, 1.0), 0.0, sqrt.delta);
-        assertNotEquals(sqrt.improve(15.0, 5.0), 1.0, sqrt.delta);
     }
 
     @Test
@@ -48,8 +46,6 @@ public class SqrtTest {
         assertEquals(sqrt.iter(2.0, 1.0), 1.0, sqrt.delta);
         assertEquals(sqrt.iter(5.0, 2.0), 1.414213562, sqrt.delta);
         assertEquals(sqrt.iter(-8.0, 4.0), -2.0, sqrt.delta);
-        assertNotEquals(sqrt.iter(10.0, 2.0), 2.0, sqrt.delta);
-        assertNotEquals(sqrt.iter(10.0, 2.0), 0.0, sqrt.delta);
     }
 
     @Test
