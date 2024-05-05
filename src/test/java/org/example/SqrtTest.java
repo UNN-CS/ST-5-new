@@ -29,9 +29,9 @@ public class SqrtTest {
         Sqrt sqrt = new Sqrt(25.0);
         assertEquals(5.0, sqrt.calc(), 0.00001);
         sqrt = new Sqrt(0.0);
-        assertEquals(0.0, sqrt1.calc(), 0.001);
+        assertEquals(0.0, sqrt.calc(), 0.001);
         sqrt = new Sqrt(-4.0);
-        assertThrows(Throwable.class, sqrt2::calc);
+        assertThrows(Throwable.class, sqrt::calc);
     }
 
     @Test
