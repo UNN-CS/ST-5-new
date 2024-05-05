@@ -21,6 +21,7 @@ public class SqrtTests {
         assertTrue(sqrt.good(2.0, 4.0));
         assertTrue(sqrt.good(8.0, 64.0000000000001));
         assertTrue(sqrt.good(32.0, 1024.0));
+
         assertFalse(sqrt.good(1.0, 4.0));
         assertFalse(sqrt.good(5.0, 17.0));
         assertFalse(sqrt.good(15.0, 112.5));

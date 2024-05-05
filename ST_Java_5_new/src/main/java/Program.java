@@ -3,6 +3,7 @@ public class Program {
         double val = Double.parseDouble("4.0");
         Sqrt sqrt = new Sqrt(val);
         double result = sqrt.calc();
+
         System.out.println("Sqrt of " + val + " = " + result);
     }
 }
