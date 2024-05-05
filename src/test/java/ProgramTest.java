@@ -1,3 +1,4 @@
+
 import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 
@@ -61,7 +62,6 @@ public class ProgramTest {
         double result = sqrt.calc();
         assertEquals(expected, result, 0.000001);
     }
-
     @Test
     public void testCalcForNegative() {
         double val = -4.0;
