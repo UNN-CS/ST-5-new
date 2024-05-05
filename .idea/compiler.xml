@@ -7,6 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="ST_Java_5_new" />
+        <module name="ST-5-new" />
       </profile>
     </annotationProcessing>
   </component>
