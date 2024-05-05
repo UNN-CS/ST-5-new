@@ -42,10 +42,10 @@ public class SqrtTest {
         Sqrt sqrt1 = new Sqrt(-9.0);
         assertThrows(Throwable.class, sqrt2::calc);
         Sqrt sqrt2 = new Sqrt(0.0);
-        assertEquals(0.0, sqrt1.calc(), 0.001);
+        assertEquals(0.0, sqrt2.calc(), 0.001);
         Sqrt sqrt3 = new Sqrt(25.0);
-        assertEquals(5.0, sqrt.calc(), 0.00001);        
+        assertEquals(5.0, sqrt3.calc(), 0.00001);        
         Sqrt sqrt4 = new Sqrt(36.0);
-        assertEquals(6.0, sqrt.calc(), 0.00001);
+        assertEquals(6.0, sqrt4.calc(), 0.00001);
     }
 }
