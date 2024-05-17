@@ -1,6 +1,6 @@
 package ru.kudinov;
 
-public class Program
+public class App
 {
     public static void main( String[] args )
     {
