@@ -4,7 +4,7 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class SqrtTest {
-    public static double delta = 1e-5
+    public static double delta = 1e-5;
     @Test
     public void testingAverage() {
         Sqrt sqrt = new Sqrt(1.0);
