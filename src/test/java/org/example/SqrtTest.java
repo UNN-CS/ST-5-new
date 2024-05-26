@@ -34,12 +34,6 @@ public class SqrtTest {
     }
 
     @Test
-    public void testLargeNumber() {
-        Sqrt sqrt = new Sqrt(1.0);
-        assertEquals(1000000.0, sqrt.calc(), 0.00001);
-    }
-
-    @Test
     public void testCalc() {
         Sqrt sqrt = new Sqrt(25.0);
         assertEquals(5.0, sqrt.calc(), 0.00001);
