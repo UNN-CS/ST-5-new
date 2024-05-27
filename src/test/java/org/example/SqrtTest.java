@@ -29,7 +29,7 @@ public class SqrtTest {
         assertEquals(1.5, sqrt.improve(1.0, 2.0));
         assertEquals(1.25, sqrt.improve(1.5, 1.5));
         assertEquals(2.1607142857142856, sqrt.improve(1.75, 4.5));
-        assertEquals(2.5, sqrt.improve(2.0, 5.0));
+        assertEquals(2.25, sqrt.improve(2.0, 5.0));
     }
 
     @Test
