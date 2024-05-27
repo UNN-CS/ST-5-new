@@ -9,34 +9,8 @@ import junit.framework.TestSuite;
  */
 public class AppTest 
     extends TestCase
-{
-    /**
-     * Create the test case
-     *
-     * @param testName name of the test case
-     */
-    public AppTest( String testName )
-    {
-        super( testName );
-    }
-
-    /**
-     * @return the suite of tests being tested
-     */
-    public static Test suite()
-    {
-        return new TestSuite( AppTest.class );
-    }
-
-    /**
-     * Rigourous Test :-)
-     */
-    public void testApp()
-    {
-        assertTrue( true );
-    }
-	
-	@Test
+{	
+	@org.junit.jupiter.api.Test
     void testConstructor() {
         Assertions.assertDoesNotThrow(() -> {Sqrt s = new Sqrt(2.0);});
         Assertions.assertDoesNotThrow(() -> {Sqrt s = new Sqrt(-2.0);});
@@ -44,14 +18,14 @@ public class AppTest
         Assertions.assertDoesNotThrow(() -> {Sqrt s = new Sqrt(0.23556);});
         Assertions.assertDoesNotThrow(() -> {Sqrt s = new Sqrt(123.432);});
     }
-    @Test
+    @org.junit.jupiter.api.Test
     void testAverage() {
         Sqrt s = new Sqrt(2.0);
         Assertions.assertEquals(s.average(2.0, 0.0), 1.0, s.delta);
         Assertions.assertEquals(s.average(12.5, 13.0), 12.75, s.delta);
         Assertions.assertEquals(s.average(2.0, -2.0), 0.0, s.delta);
     }
-    @Test
+    @org.junit.jupiter.api.Test
     void testGood() {
         Sqrt s = new Sqrt(2.0);
         Assertions.assertTrue(s.good(2.0,4.0));
@@ -59,21 +33,21 @@ public class AppTest
         Assertions.assertTrue(s.good(-2.0,4.0));
         Assertions.assertFalse(s.good(2.0,3.999));
     }
-    @Test
+    @org.junit.jupiter.api.Test
     void testImprove() {
         Sqrt s = new Sqrt(2.0);
         Assertions.assertEquals(s.improve(2.0, 2.0), 1.5, s.delta);
         Assertions.assertEquals(s.improve(2.0, 4.0), 2.0, s.delta);
         Assertions.assertEquals(s.improve(2.0, 0), 1.0, s.delta);
     }
-    @Test
+    @org.junit.jupiter.api.Test
     void testIter() {
         Sqrt s = new Sqrt(2.0);
         Assertions.assertEquals(s.iter(1.0, 4.0), 2.0, s.delta);
         Assertions.assertEquals(s.iter(1.0, 2.0), 1.4142135623746899, s.delta);
         Assertions.assertEquals(s.iter(2.0, 2.0), 1.4142135623746899, s.delta);
     }
-    @Test
+    @org.junit.jupiter.api.Test
     void testCalc() {
         Sqrt s = new Sqrt(2.0);
         Assertions.assertEquals(s.calc(), 1.4142135623746899, s.delta);
