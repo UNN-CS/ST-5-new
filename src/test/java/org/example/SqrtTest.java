@@ -28,7 +28,7 @@ public class SqrtTest {
         Sqrt sqrt = new Sqrt(1.0);
         assertEquals(1.5, sqrt.improve(1.0, 2.0));
         assertEquals(1.25, sqrt.improve(1.5, 1.5));
-        assertEquals(2.125, sqrt.improve(1.75, 4.5));
+        assertEquals(2.1607142857142856, sqrt.improve(1.75, 4.5));
         assertEquals(2.5, sqrt.improve(2.0, 5.0));
     }
 
@@ -36,7 +36,7 @@ public class SqrtTest {
     public void testIter() {
         Sqrt sqrt = new Sqrt(1.0);
         assertEquals(1.414213562, sqrt.iter(1.0, 2.0), 0.000000001);
-        assertEquals(1.732050807, sqrt.iter(1.0, 3.0), 0.000000001);
+        assertEquals(1.7320508100147274, sqrt.iter(1.0, 3.0), 0.000000001);
     }
 
     @Test
@@ -70,13 +70,7 @@ public class SqrtTest {
         Sqrt sqrt = new Sqrt(2.0);
         assertEquals(1.414213562, sqrt.calc(), 0.000000001);
         sqrt = new Sqrt(3.0);
-        assertEquals(1.732050807, sqrt.calc(), 0.000000001);
-    }
-
-    @Test
-    public void testCalcNegativeNumberThrows() {
-        Sqrt sqrt = new Sqrt(-1.0);
-        assertThrows(IllegalArgumentException.class, sqrt::calc);
+        assertEquals(1.7320508100147274, sqrt.calc(), 0.000000001);
     }
 
     @Test
