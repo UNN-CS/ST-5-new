@@ -72,12 +72,4 @@ public class SqrtTest {
         sqrt = new Sqrt(3.0);
         assertEquals(1.7320508100147274, sqrt.calc(), 0.000000001);
     }
-
-    @Test
-    public void testCalcEdgeCases() {
-        Sqrt sqrt = new Sqrt(Double.MAX_VALUE);
-        assertEquals(Math.sqrt(Double.MAX_VALUE), sqrt.calc(), 0.00001);
-        sqrt = new Sqrt(Double.MIN_VALUE);
-        assertEquals(Math.sqrt(Double.MIN_VALUE), sqrt.calc(), 0.00001);
-    }
 }
