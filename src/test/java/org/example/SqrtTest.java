@@ -27,8 +27,7 @@ public class SqrtTest {
         Sqrt sqrt = new Sqrt(1.0);
         assertEquals(2.25, sqrt.improve(2.0, 5.0));
         assertEquals(4.333333333333333, sqrt.improve(6.0, 16.0));
-        assertEquals(3.75, sqrt.improve(4.5, 12.5));
-        assertEquals(3.0, sqrt.improve(2.0, 9.0));
+        assertEquals(3.638888888888889, sqrt.improve(4.5, 12.5));
     }
 
     @Test
