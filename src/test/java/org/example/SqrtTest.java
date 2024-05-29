@@ -2,7 +2,7 @@ package org.example;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
-public class SqrtTests {
+public class SqrtTest {
 
     @Test
     public void testAverage() {
