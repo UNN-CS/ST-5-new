@@ -1,35 +1,29 @@
 package org.example;
 
-public class Sqrt {
-    double argue;
-    double del=0.00000001;
+class Sqrt
+{
+   double delta=0.00000001;
+   double arg;
 
-    public Sqrt(double argue) {
-        this.argue=argue;
-    }
-
-    public boolean good(double n1,double n2) {
-        return Math.abs(n1 * n1 - n2) < del;
-    }
-
-    public double improve(double n1,double n2) {
-        double result = average(n1,n2 / n1);
-        return result;
-    }
-
-    public double average(double n1,double n2) {
-        double result = (n1 + n2) / 2.0;
-        return result;
-    }
-
-    public double iter(double guess, double x) {
-        if(good(guess,x))
-            return guess;
-        else
-            return iter(improve(guess,x),x);
-    }
-
-    public double calc() {
-        return iter(1.0 , argue);
-    }
+   public Sqrt(double arg) {
+      this.arg=arg;
+   }
+   public double average(double x,double y) {
+      return (x+y)/2.0;
+   }
+   public boolean good(double guess,double x) {
+      return Math.abs(guess*guess-x)<delta;
+   }
+   public double improve(double guess,double x) {
+      return average(guess,x/guess);
+   }
+   public double iter(double guess, double x) {
+      if(good(guess,x))
+         return guess;
+      else
+         return iter(improve(guess,x),x);
+   }
+   public double calc() {
+      return iter(1.0,arg);
+   }
 }
