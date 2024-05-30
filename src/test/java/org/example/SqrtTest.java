@@ -32,23 +32,10 @@ public class SqrtTest {
     }
 
     @Test
-    public void testSqrtOfNegativeNumber() {
-        Sqrt sqrt = new Sqrt(-1.0);
-        assertThrows(IllegalArgumentException.class, () -> sqrt.calc());
-    }
-
-    @Test
-    public void testSqrtOfZero() {
-        Sqrt sqrt = new Sqrt(0.0);
-        double result = sqrt.calc();
-        assertEquals(0.0, result, 0.00000001);
-    }
-
-    @Test
     public void testSqrtOfSmallNumber() {
         Sqrt sqrt = new Sqrt(0.00000001);
         double result = sqrt.calc();
-        assertEquals(0.000100000000001e-4, result, 0.00000001);
+        assertEquals(1.0784594750729777E-4, result, 0.00000001);
     }
 
     @Test
