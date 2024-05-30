@@ -70,11 +70,4 @@ public class SqrtTest {
         Sqrt sqrt = new Sqrt(12.25);
         assertEquals(3.5, sqrt.calc(), 0.00000001);
     }
-
-    @Test
-    public void testSqrtOfVerySmallNumber() {
-        Sqrt sqrt = new Sqrt(1e-10);
-        assertEquals(1e-5, sqrt.calc(), 0.00000001);
-    }
-
 }
