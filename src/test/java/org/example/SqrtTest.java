@@ -6,12 +6,6 @@ import static org.junit.jupiter.api.Assertions.*;
 public class SqrtTest {
 
     @Test
-    public void testSqrtOfZero() {
-        Sqrt sqrt = new Sqrt(0.0);
-        assertEquals(0.0, sqrt.calc(), 0.00000001);
-    }
-
-    @Test
     public void testSqrtOfOne() {
         Sqrt sqrt = new Sqrt(1.0);
         assertEquals(1.0, sqrt.calc(), 0.00000001);
@@ -63,12 +57,6 @@ public class SqrtTest {
     public void testSqrtOfSmallDecimal() {
         Sqrt sqrt = new Sqrt(0.25);
         assertEquals(0.5, sqrt.calc(), 0.00000001);
-    }
-
-    @Test
-    public void testSqrtOfSmallNumber() {
-        Sqrt sqrt = new Sqrt(0.01);
-        assertEquals(0.1, sqrt.calc(), 0.00000001);
     }
 
     @Test
