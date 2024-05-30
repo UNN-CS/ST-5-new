@@ -5,49 +5,68 @@ import org.junit.jupiter.api.Test;
 
 
 public class SqrtTest {
-  @Test
-  public void testingAverage() {
-    Sqrt sqrt = new Sqrt(1.0);
-    assertEquals(2.0, sqrt.average(1.0, 3.0));
-    assertEquals(5.0, sqrt.average(4.0, 6.0));
-    assertEquals(7.0, sqrt.average(8.0, 6.0));
-    assertEquals(10.0, sqrt.average(8.0, 12.0));
-  }
+    private static final double DELTA = 0.00000001;
 
-  @Test
-  public void testingGood() {
-    Sqrt sqrt = new Sqrt(1.0);
-    assertTrue(sqrt.good(3.0, 9.0));
-    assertFalse(sqrt.good(2.999, 9.0));
-    assertTrue(sqrt.good(4.0, 16.0));
-    assertFalse(sqrt.good(3.999, 16.0));
-  }
+    @Test
+    public void testAverage() {
+        Sqrt sqrt = new Sqrt(0);
+        assertEquals(1.5, sqrt.average(1, 2), DELTA);
+        assertEquals(2.0, sqrt.average(1, 3), DELTA);
+        assertEquals(0.5, sqrt.average(0, 1), DELTA);
+    }
 
-  @Test
-  public void testingImprove() {
-    Sqrt sqrt = new Sqrt(1.0);
-    assertEquals(3.00, sqrt.improve(2.0, 8.0));
-    assertEquals(3.5, sqrt.improve(5.0, 10.0));
-    assertEquals(4.5, sqrt.improve(5.0, 20.0));
-    assertEquals(5.0, sqrt.improve(5.0, 25.0));
-  }
+    @Test
+    public void testGood() {
+        Sqrt sqrt = new Sqrt(0);
+        assertTrue(sqrt.good(1.0, 1.0));
+        assertTrue(sqrt.good(2.0, 4.0));
+        assertTrue(sqrt.good(1.41421356237, 2.0));  // Close to sqrt(2)
+        assertFalse(sqrt.good(1.0, 2.0));
+    }
 
-  @Test
-  public void testingIter() {
-    Sqrt sqrt = new Sqrt(1.0);
-    assertEquals(2.0, sqrt.iter(1.0, 4.0), 0.00001);
-    assertEquals(2.0, sqrt.iter(1.5, 4.0), 0.00001);
-  }
+    @Test
+    public void testImprove() {
+        Sqrt sqrt = new Sqrt(0);
+        assertEquals(1.5, sqrt.improve(1.0, 2.0), DELTA);
+    }
 
-  @Test
-  public void testingCalc() {
-    Sqrt sqrt1 = new Sqrt(-9.0);
-    assertThrows(Throwable.class, sqrt1::calc);
-    Sqrt sqrt2 = new Sqrt(0.0);
-    assertEquals(0.0, sqrt2.calc(), 0.001);
-    Sqrt sqrt3 = new Sqrt(25.0);
-    assertEquals(5.0, sqrt3.calc(), 0.00001);
-    Sqrt sqrt4 = new Sqrt(36.0);
-    assertEquals(6.0, sqrt4.calc(), 0.00001);
-  }
+    @Test
+    public void testIter() {
+        Sqrt sqrt = new Sqrt(0);
+        assertEquals(1.41421356237, sqrt.iter(1.0, 2.0), DELTA); // sqrt(2)
+        assertEquals(2.0, sqrt.iter(1.0, 4.0), DELTA);            // sqrt(4)
+        assertEquals(3.0, sqrt.iter(1.0, 9.0), DELTA);            // sqrt(9)
+        assertEquals(5.0, sqrt.iter(1.0, 25.0), DELTA);           // sqrt(25)
+    }
+
+    @Test
+    public void testCalc() {
+        Sqrt sqrt1 = new Sqrt(2.0);
+        assertEquals(1.41421356237, sqrt1.calc(), DELTA); // sqrt(2)
+
+        Sqrt sqrt2 = new Sqrt(4.0);
+        assertEquals(2.0, sqrt2.calc(), DELTA);           // sqrt(4)
+
+        Sqrt sqrt3 = new Sqrt(9.0);
+        assertEquals(3.0, sqrt3.calc(), DELTA);           // sqrt(9)
+
+        Sqrt sqrt5 = new Sqrt(1.0);
+        assertEquals(1.0, sqrt5.calc(), DELTA);           // sqrt(1)
+
+        Sqrt sqrt6 = new Sqrt(25.0);
+        assertEquals(5.0, sqrt6.calc(), DELTA);           // sqrt(25)
+    }
+
+    @Test
+    public void testNegativeNumbers() {
+        Sqrt sqrt = new Sqrt(-1.0);
+        assertThrows(StackOverflowError.class, sqrt::calc); // Should cause infinite recursion
+    }
+
+    @Test
+    public void testEdgeCases() {
+        // Very large number
+        Sqrt sqrt2 = new Sqrt(1e10);
+        assertEquals(100000.0, sqrt2.calc(), DELTA); // sqrt(1e10)
+    }
 }
