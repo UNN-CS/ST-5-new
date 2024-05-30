@@ -8,13 +8,16 @@ public class Sqrt {
         this.arg=arg;
     }
     public double average(double x,double y) {
-        return (x+y)/2.0;
+        double res = (y + x) / 2.0;
+        return res;
     }
     public boolean good(double guess,double x) {
-        return Math.abs(guess*guess-x)<delta;
+        boolean res = Math.abs(guess*guess-x)<delta
+        return res;
     }
     public double improve(double guess,double x) {
-        return average(guess,x/guess);
+        double res = average(guess,x/guess);
+        return res;
     }
     public double iter(double guess, double x) {
         if(good(guess,x))
