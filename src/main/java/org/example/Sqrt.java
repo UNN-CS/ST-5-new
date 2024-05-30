@@ -12,7 +12,7 @@ public class Sqrt {
         return res;
     }
     public boolean good(double guess,double x) {
-        boolean res = Math.abs(guess*guess-x)<delta
+        boolean res = Math.abs(guess*guess-x)<delta;
         return res;
     }
     public double improve(double guess,double x) {
