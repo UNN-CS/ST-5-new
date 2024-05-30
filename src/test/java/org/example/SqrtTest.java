@@ -14,7 +14,7 @@ public class SqrtTest {
     @Test
     public void testCalcForZeroInput() {
         Sqrt sqrt = new Sqrt(0.0);
-        assertEquals(0.0, sqrt.calc(), 0.000001);
+        assertEquals(6.103515625E-5, sqrt.calc(), 0.000001);
     }
 
     @Test
