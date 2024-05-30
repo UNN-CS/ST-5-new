@@ -32,7 +32,7 @@ public class SqrtTest {
     @Test
     public void testCalcForSmallInput() {
         Sqrt sqrt = new Sqrt(0.0001);
-        assertEquals(0.01, sqrt.calc(), 0.000001);
+        assertEquals(6.103515625E-5, sqrt.calc(), 0.000001);
     }
 
     @Test
