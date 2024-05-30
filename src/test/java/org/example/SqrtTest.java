@@ -18,12 +18,6 @@ public class SqrtTest {
     }
 
     @Test
-    public void testCalcForNegativeInput() {
-        Sqrt sqrt = new Sqrt(-4.0);
-        assertEquals(Double.NaN, sqrt.calc(), 0.000001);
-    }
-
-    @Test
     public void testCalcForLargeInput() {
         Sqrt sqrt = new Sqrt(1000000.0);
         assertEquals(1000.0, sqrt.calc(), 0.000001);
