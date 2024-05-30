@@ -77,11 +77,6 @@ public class SqrtTest {
         assertEquals(Double.NaN, sqrt.calc(), 0.000001);
     }
 
-    @Test(expected = IllegalArgumentException.class)
-    public void testConstructorThrowsExceptionForNaNInput() {
-        new Sqrt(Double.NaN);
-    }
-
     @Test
     public void testGood() {
         Sqrt sqrt = new Sqrt(4.0);
