@@ -87,7 +87,7 @@ public class SqrtTest {
     @Test
     public void testImprove() {
         Sqrt sqrt = new Sqrt(4.0);
-        assertEquals(1.5, sqrt.improve(1.0, 4.0), 0.000001);
+        assertEquals(2.5, sqrt.improve(1.0, 4.0), 0.000001);
     }
 
     @Test
