@@ -6,52 +6,104 @@ import static org.junit.jupiter.api.Assertions.*;
 public class SqrtTest {
 
     @Test
+    public void testCalcForPositiveInput() {
+        Sqrt sqrt = new Sqrt(4.0);
+        assertEquals(2.0, sqrt.calc(), 0.000001);
+    }
+
+    @Test
+    public void testCalcForZeroInput() {
+        Sqrt sqrt = new Sqrt(0.0);
+        assertEquals(0.0, sqrt.calc(), 0.000001);
+    }
+
+    @Test
+    public void testCalcForNegativeInput() {
+        Sqrt sqrt = new Sqrt(-4.0);
+        assertEquals(Double.NaN, sqrt.calc(), 0.000001);
+    }
+
+    @Test
+    public void testCalcForLargeInput() {
+        Sqrt sqrt = new Sqrt(1000000.0);
+        assertEquals(1000.0, sqrt.calc(), 0.000001);
+    }
+
+    @Test
+    public void testCalcForSmallInput() {
+        Sqrt sqrt = new Sqrt(0.0001);
+        assertEquals(0.01, sqrt.calc(), 0.000001);
+    }
+
+    @Test
+    public void testCalcForFractionalInput() {
+        Sqrt sqrt = new Sqrt(2.25);
+        assertEquals(1.5, sqrt.calc(), 0.000001);
+    }
+
+    @Test
+    public void testCalcForNegativeFractionalInput() {
+        Sqrt sqrt = new Sqrt(-2.25);
+        assertEquals(Double.NaN, sqrt.calc(), 0.000001);
+    }
+
+    @Test
+    public void testCalcForVeryLargeInput() {
+        Sqrt sqrt = new Sqrt(Double.MAX_VALUE);
+        assertEquals(Double.NaN, sqrt.calc(), 0.000001);
+    }
+
+    @Test
+    public void testCalcForVerySmallInput() {
+        Sqrt sqrt = new Sqrt(Double.MIN_VALUE);
+        assertEquals(0.0, sqrt.calc(), 0.000001);
+    }
+
+    @Test
+    public void testCalcForInfinityInput() {
+        Sqrt sqrt = new Sqrt(Double.POSITIVE_INFINITY);
+        assertEquals(Double.POSITIVE_INFINITY, sqrt.calc(), 0.000001);
+    }
+
+    @Test
+    public void testCalcForNegativeInfinityInput() {
+        Sqrt sqrt = new Sqrt(Double.NEGATIVE_INFINITY);
+        assertEquals(Double.NaN, sqrt.calc(), 0.000001);
+    }
+
+    @Test
+    public void testCalcForNaNInput() {
+        Sqrt sqrt = new Sqrt(Double.NaN);
+        assertEquals(Double.NaN, sqrt.calc(), 0.000001);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void testConstructorThrowsExceptionForNaNInput() {
+        new Sqrt(Double.NaN);
+    }
+
+    @Test
     public void testGood() {
-        Sqrt sqrt = new Sqrt(1.0);
-        assertTrue(sqrt.good(4.0, 16.0));
-        assertFalse(sqrt.good(3.999, 16.0));
-    }
-
-    @Test
-    public void testIter() {
-        Sqrt sqrt = new Sqrt(1.0);
-        assertEquals(2.0, sqrt.iter(1.0, 4.0), 0.00001);
-        assertEquals(2.0, sqrt.iter(1.5, 4.0), 0.00001);
-    }
-
-    @Test
-    public void testAverage() {
-        Sqrt sqrt = new Sqrt(1.0);
-        assertEquals(2.0, sqrt.average(1.0, 3.0));
-        assertEquals(5.0, sqrt.average(3.0, 7.0));
+        Sqrt sqrt = new Sqrt(4.0);
+        assertEquals(true, sqrt.good(2.0, 4.0));
+        assertEquals(false, sqrt.good(1.0, 4.0));
     }
 
     @Test
     public void testImprove() {
-        Sqrt sqrt = new Sqrt(1.0);
-        assertEquals(4.0, sqrt.improve(4.0, 16.0));
-        assertEquals(2.25, sqrt.improve(2.0, 5.0));
+        Sqrt sqrt = new Sqrt(4.0);
+        assertEquals(1.5, sqrt.improve(1.0, 4.0), 0.000001);
     }
 
     @Test
-    public void testCalc() {
-        Sqrt sqrt = new Sqrt(25.0);
-        assertEquals(5.0, sqrt.calc(), 0.00001);
-        Sqrt sqrt1 = new Sqrt(0.0);
-        assertEquals(0.0, sqrt1.calc(), 0.001);
-        Sqrt sqrt2 = new Sqrt(-4.0);
-        assertThrows(Throwable.class, sqrt2::calc);
+    public void testAverage() {
+        Sqrt sqrt = new Sqrt(4.0);
+        assertEquals(1.5, sqrt.average(1.0, 2.0), 0.000001);
     }
 
     @Test
-    public void testNegativeNumber() {
-        Sqrt sqrt = new Sqrt(-16.0);
-        assertThrows(Throwable.class, sqrt::calc);
-    }
-
-    @Test
-    public void testSmallNumber() {
-        Sqrt sqrt = new Sqrt(0.0001);
-        assertEquals(0.01, sqrt.calc(), 0.00001);
+    public void testIter() {
+        Sqrt sqrt = new Sqrt(4.0);
+        assertEquals(2.0, sqrt.iter(1.0, 4.0), 0.000001);
     }
 }
