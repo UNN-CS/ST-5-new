@@ -7,7 +7,7 @@ class SqrtTest {
 
     @Test
     void testAverage() {
-        Sqrt sqrt = new Sqrt(2.0);
+        Sqrt sqrt =new Sqrt(2.0);
         assertEquals(1.5, sqrt.average(1.0, 2.0));
     }
 
