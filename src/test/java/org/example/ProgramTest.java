@@ -1,5 +1,5 @@
 // Copyright 2024 Kokin Ivan
-package org.st5;
+package org.example;
 
 import junit.framework.Test;
 import junit.framework.TestCase;
