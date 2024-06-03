@@ -6,7 +6,7 @@ public class SqrtTest {
     @Test
     public void testGood() {
         Sqrt sqrt = new Sqrt(2.0);
-        assertTrue(sqrt.good(1.4142135, 2.0));
+        assertTrue(sqrt.good(2, 4.0));
         assertFalse(sqrt.good(1.5, 2.0));
     }
 
