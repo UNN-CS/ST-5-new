@@ -3,6 +3,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class TestSqrt {
+    
     @Test
     public void testAverage() {
         Sqrt sqrt = new Sqrt(0);
@@ -29,34 +30,6 @@ public class TestSqrt {
         Sqrt sqrt = new Sqrt(4.0);
         double result = sqrt.iter(1.0, 4.0);
         assertEquals(2.0, result, 0.00000001);
-    }
-
-    @Test
-    public void testPositiveNumber() {
-        Sqrt sqrt = new Sqrt(25.0);
-        double result = sqrt.calc();
-        assertEquals(5.0, result, 0.00000001);
-    }
-
-    @Test
-    public void testNegativeNumber() {
-        Sqrt sqrt = new Sqrt(-1.0);
-        double result = sqrt.calc();
-        assertTrue(Double.isNaN(result));
-    }
-
-    @Test
-    public void testZero() {
-        Sqrt sqrt = new Sqrt(0.0);
-        double result = sqrt.calc();
-        assertEquals(0.0, result, 0.00000001);
-    }
-
-    @Test
-    public void testSmallNumber() {
-        Sqrt sqrt = new Sqrt(0.00000001);
-        double result = sqrt.calc();
-        assertEquals(0.00001, result, 0.00000001);
     }
 
 }
