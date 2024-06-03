@@ -3,7 +3,7 @@ package org.example;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-public class SqrtTests {
+public class SqrtTest {
     private Sqrt sqrt;
 
     @Test
