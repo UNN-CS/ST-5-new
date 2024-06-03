@@ -5,42 +5,42 @@ import static org.junit.Assert.*;
 
 public class SqrtTest {
 
-    double delta = 1e-4;
+    double DELTA = 1e-4;
 
     @Test
-    public void average() {
+    public void TestAvg() {
         Sqrt sqrt = new Sqrt(0);
-        assertEquals(1.0, sqrt.average(-2.0, 4.0), delta);
+        assertEquals(6.0, sqrt.average(-4.0, 16.0), DELTA);
     }
 
     @Test
-    public void good() {
+    public void TestGood() {
         Sqrt sqrt = new Sqrt(0);
-        assertTrue(sqrt.good(2.0, 4));
-        assertFalse(sqrt.good(1.9, 4));
+        assertTrue(sqrt.good(4.0, 16));
+        assertFalse(sqrt.good(1.9, 16));
     }
 
     @Test
-    public void improve() {
+    public void TestImprove() {
         Sqrt sqrt = new Sqrt(0);
-        assertEquals(2.05, sqrt.improve(2.5, 4), delta);
+        assertEquals(3.05, sqrt.improve(3.6, 9), DELTA);
     }
 
     @Test
-    public void iter() {
+    public void TestIteration() {
         Sqrt sqrt = new Sqrt(0);
-        assertEquals(32.0, sqrt.iter(1.0, 1024), delta);
+        assertEquals(50.0, sqrt.iter(5.0, 2500), DELTA);
     }
 
     @Test
-    public void calc() {
-        Sqrt sqrt = new Sqrt(1024);
-        assertEquals(32.0, sqrt.calc(), delta);
+    public void TestCalculate() {
+        Sqrt sqrt = new Sqrt(4096);
+        assertEquals(64.0, sqrt.calc(), DELTA);
     }
 
     @Test(expected = StackOverflowError.class)
-    public void exception() {
-        Sqrt sqrt = new Sqrt(-1);
+    public void TestException() {
+        Sqrt sqrt = new Sqrt(-3);
         sqrt.calc();
     }
 }
