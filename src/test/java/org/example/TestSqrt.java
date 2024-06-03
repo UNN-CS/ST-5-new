@@ -31,19 +31,19 @@ public class TestSqrt {
         assertEquals(2.0, result, 0.00000001);
     }
 
-    // @Test
-    // public void testCalc() {
-    //     Sqrt sqrt = new Sqrt(4.0);
-    //     double result = sqrt.calc();
-    //     assertEquals(2.0, result, 0.00000001);
-    // }
+    @Test
+    public void testCalc() {
+        Sqrt sqrt = new Sqrt(4.0);
+        double result = sqrt.calc();
+        assertEquals(2.0, result, 0.00000001);
+    }
 
-    // @Test
-    // public void testNegativeNumber() {
-    //     Sqrt sqrt = new Sqrt(-4.0);
-    //     double result = sqrt.calc();
-    //     assertTrue(Double.isNaN(result));
-    // }
+    @Test
+    public void testNegativeNumber() {
+        Sqrt sqrt = new Sqrt(-4.0);
+        double result = sqrt.calc();
+        assertTrue(Double.isNaN(result));
+    }
 
     // @Test
     // public void testSmallNumber() {
