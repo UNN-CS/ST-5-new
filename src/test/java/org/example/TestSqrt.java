@@ -3,7 +3,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class TestSqrt {
-    
+
     @Test
     public void testAverage() {
         Sqrt sqrt = new Sqrt(0);
@@ -32,4 +32,32 @@ public class TestSqrt {
         assertEquals(2.0, result, 0.00000001);
     }
 
+    @Test
+    public void testAverageWithNegativeNumbers() {
+        Sqrt sqrt = new Sqrt(0);
+        double result = sqrt.average(-4.0, -2.0);
+        assertEquals(-3.0, result, 0.00000001);
+    }
+
+    @Test
+    public void testGoodWithSmallDelta() {
+        Sqrt sqrt = new Sqrt(0);
+        sqrt.delta = 0.0001; // Устанавливаем маленькую дельту для теста
+        boolean result = sqrt.good(1.41421356237, 2.0);
+        assertTrue(result);
+    }
+
+    @Test
+    public void testImproveWithLargeNumbers() {
+        Sqrt sqrt = new Sqrt(0);
+        double result = sqrt.improve(1000000.0, 200000000000.0);
+        assertEquals(6000.0, result, 0.00000001);
+    }
+
+    @Test
+    public void testIterWithVerySmallNumbers() {
+        Sqrt sqrt = new Sqrt(0.000000000000001);
+        double result = sqrt.iter(1.0, 0.000000000000001);
+        assertEquals(0.00001, result, 0.00000001);
+    }
 }
