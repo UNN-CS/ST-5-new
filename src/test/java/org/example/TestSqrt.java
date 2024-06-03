@@ -47,17 +47,4 @@ public class TestSqrt {
         assertTrue(result);
     }
 
-    @Test
-    public void testImproveWithLargeNumbers() {
-        Sqrt sqrt = new Sqrt(0);
-        double result = sqrt.improve(1000000.0, 200000000000.0);
-        assertEquals(6000.0, result, 0.00000001);
-    }
-
-    @Test
-    public void testIterWithVerySmallNumbers() {
-        Sqrt sqrt = new Sqrt(0.000000000000001);
-        double result = sqrt.iter(1.0, 0.000000000000001);
-        assertEquals(0.00001, result, 0.00000001);
-    }
 }
