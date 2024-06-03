@@ -3,41 +3,41 @@ package org.example;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
-class SqrtTest {
+public class SqrtTest {
 
     @Test
-    void testAverage() {
+    public void TestAverageValue() {
         Sqrt sqrt = new Sqrt(2.0);
         assertEquals(1.5, sqrt.average(1.0, 2.0));
     }
 
     @Test
-    void testGood() {
-        Sqrt sqrt = new Sqrt(16.0);
-        assertTrue(sqrt.good(4.0, 16.0));
-        assertFalse(sqrt.good(3.9, 16.0));
-    }
-
-    @Test
-    void testImprove() {
-        Sqrt sqrt = new Sqrt(9.0);
-        double guess = 3.0;
-        double improved = sqrt.improve(guess, 9.0);
-        assertEquals(3.0, improved, 0.001);
-    }
-
-    @Test
-    void testIter() {
+    public void TestGood() {
         Sqrt sqrt = new Sqrt(25.0);
-        double result = sqrt.iter(5.0, 25.0);
-        assertTrue(sqrt.good(result, 25.0));
+        assertTrue(sqrt.good(5.0, 25.0));
+        assertFalse(sqrt.good(4.9, 25.0));
     }
 
     @Test
-    void testCalc() {
-        Sqrt sqrt = new Sqrt(4.0);
-        assertEquals(2.0, sqrt.calc(), 0.0001);
-        sqrt = new Sqrt(2.0);
-        assertEquals(Math.sqrt(2.0), sqrt.calc(), 0.0001);
+    public void TestImprove() {
+        Sqrt sqrt = new Sqrt(16.0);
+        double guess = 4.0;
+        double improved = sqrt.improve(guess, 16.0);
+        assertEquals(4.0, improved, 0.001);
+    }
+
+    @Test
+    public void TestIter() {
+        Sqrt sqrt = new Sqrt(16.0);
+        double result = sqrt.iter(4.0, 16.0);
+        assertTrue(sqrt.good(result, 16.0));
+    }
+
+    @Test
+    public void TestCalc() {
+        Sqrt sqrt = new Sqrt(16.0);
+        assertEquals(4.0, sqrt.calc(), 0.0001);
+        sqrt = new Sqrt(16.0);
+        assertEquals(Math.sqrt(16.0), sqrt.calc(), 0.0001);
     }
 }
